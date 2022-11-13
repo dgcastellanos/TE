@@ -96,7 +96,7 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge"></div>
-                                        <div>Ticket Totales</div>
+                                        <div>TICKET TOTALES</div>
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                       <div class="huge"></div>
-                                      <div>Mis Ticket</div>
+                                      <div>MIS TICKET</div>
                                     </div>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                       <div class="huge"></div>
-                                      <div>Ticket Abiertos</div>
+                                      <div>TICKET ABIERTOS</div>
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +162,7 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                       <div class="huge"></div>
-                                      <div>Ticket Cerrados</div>
+                                      <div>TICKET CERRADOS</div>
                                     </div>
                                 </div>
                             </div>
