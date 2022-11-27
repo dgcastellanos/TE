@@ -1,20 +1,14 @@
 <?php
-  //Se incluye el archivo Conexion.php que contiene la clase usada para la conexion a la bd
 
-  //include ("conexion/Conexion.php");
-  //Se crea el objeto conexion
-  
-  //$bd = new Conexion();
-  //Se inicia la sesion o se propaga
-  
-  session_start();
-  //Condicion que no deja entrar al index a menos que exista una variable de session
-  
-  if(!isset($_SESSION["id_usuario"])){
-    //Redirecciona al login
-    header("Location: login.php");
-  }
+  include('crud.php');
+session_start();
+
+
+if(isset($_SESSION['login_usuario'])){
+
+
 ?>
+
 
 
 
@@ -46,12 +40,7 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
 
 </head>
 
@@ -69,7 +58,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="subastas.php">SISTEMA DE QUEJAS UPES</a>
+                <a class="navbar-brand" href="index.php">SISTEMA DE QUEJAS UPES</a>
             </div>
             <!-- Top Menu Items -->
             <?php
@@ -119,7 +108,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="subastas.php">
+                            <a href="totales.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">Ver detalles</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -220,3 +209,12 @@
 </body>
 
 </html>
+
+<?php 
+
+}else{
+
+    header('Location:login.php');
+}
+
+?>

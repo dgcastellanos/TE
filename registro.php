@@ -1,14 +1,41 @@
 <?php
-  //include ("conexion/Conexion.php");
-  //include ("Encryptar.php");
-  //$bd = new Conexion();
-  //$enc = new Encryptar();
 
 
-  session_start();
-  if(isset($_SESSION["id_usuario"])){
-    header("Location: index.php");
-  }
+  include('crud.php');
+
+
+
+if($_SERVER['REQUEST_METHOD']=='POST'){
+
+
+    $datos = array(
+
+        'id_usuario' =>null,
+        'correo'=>$_REQUEST['correo'],
+        'nombre'=>$_REQUEST['nombre'],
+        'apellido'=>$_REQUEST['apellido'],
+        'celular'=>$_REQUEST['celular'],
+        'carnet'=>$_REQUEST['carnet'],
+        'password'=>$_REQUEST['pass'],
+        'id_rol'=>1
+
+    );
+
+        $result  = create($datos,'usuario');
+
+
+        if($result){
+
+          echo "<script>alert('Usuario registrado correctamente ve al login para que inicies sesion');</script>";
+
+        
+
+        }else{
+          echo "<script>alert('No se pudo registrar el usuario');</script>";
+        }
+
+      }
+
 ?>
 
 
@@ -40,38 +67,12 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
 
 </head>
 
 <body>
 
-    <?php
-      if(isset($_POST["registro"])){
-        //echo "<script>alert('Entrar');</script>";
-
-        $correo = $_POST["correo"];
-        $user = $_POST["user"];
-        $pass = $_POST["pass"];
-
-        $query = "INSERT into usuario(correo, user, pass) values('$correo','$user','$pass');";
-
-        $result = $bd->query($query);
-
-        if($result == true){
-          echo "<script>alert('Usuario registrado correctamente ve al login para que inicies sesion');</script>";
-          //header("Location: login.php");
-        }else{
-          echo "<script>alert('No se pudo registrar el usuario');</script>";
-        }
-
-      }
-    ?>
 
     <div class="container">
         <div class="row">
@@ -89,7 +90,7 @@
 
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="" method="post">
+                        <form role="form" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
                             <fieldset>
 
                                 <div class="form-group">
@@ -97,14 +98,26 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Usuario" name="user" type="text">
+                                    <input class="form-control" placeholder="Nombre" name="nombre" type="text">
+                                </div>
+
+                                  <div class="form-group">
+                                    <input class="form-control" placeholder="Apellido" name="apellido" type="text">
+                                </div>
+
+                                  <div class="form-group">
+                                    <input class="form-control" placeholder="Celular" name="celular" type="number" maxlength="8">
+                                </div>
+
+                                  <div class="form-group">
+                                    <input class="form-control" placeholder="Carnet" name="carnet" type="type" maxlength="6"> 
                                 </div>
 
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Contraseña" name="pass" type="password">
                                 </div>
 
-                                <!-- Change this to a button or input when using this as a form -->
+                      
                                 <input type="submit" name="registro" class="btn btn-success btn-block" value="Registrarme">
 
                             </fieldset>
