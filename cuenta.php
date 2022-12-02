@@ -112,15 +112,13 @@ $reclamos = findAll('reclamo');
 foreach ($reclamos as $value) {
   
      
-
-
 ?>           
 
       <tr>
           <td width="180px">
             <center>
-<a href="<?php echo "reclamo.php?id=".$value['id_reclamo']; ?>">               
-<img src="<?php echo $url.$value['img']; ?>" style="height: 50px;">
+              <a href="<?php echo "reclamo.php?id=".$value['id_reclamo']; ?>">               
+                <img src="<?php echo $url.$value['img']; ?>" style="height: 50px;">
               </a>
             </center>
           </td>

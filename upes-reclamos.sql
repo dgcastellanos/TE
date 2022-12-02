@@ -329,3 +329,20 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+/* Inserción de datos */
+
+/*
+
+INSERT INTO `rol` (`id_rol`, `nombre`, `descripcion`, `fecha_creacion`, `fecha_actualizacion`) VALUES ('1', 'Admin', 'Control total', current_timestamp(), NULL);
+
+INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `celular`, `password`, `correo`, `carnet`, `id_rol`, `fecha_creacion`, `fecha_actualizacion`) 
+VALUES ('1', 'David', 'Castellanos', '70561696', '123456', 'ct201902@upes.edu.sv', 'CT201902', '1', current_timestamp(), NULL);
+
+INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `celular`, `password`, `correo`, `carnet`, `id_rol`, `fecha_creacion`, `fecha_actualizacion`) 
+VALUES ('2', 'Rafael', 'Marroquín', '12345678', '123456', 'mo201801@upes.edu.sv', 'MO201801', '1', current_timestamp(), NULL);
+
+INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `celular`, `password`, `correo`, `carnet`, `id_rol`, `fecha_creacion`, `fecha_actualizacion`) 
+VALUES ('3', 'Alicia', 'Pérez', '12345678', '123456', 'pa201703@upes.edu.sv', 'PA201703', '1', current_timestamp(), NULL)
+
+*/
