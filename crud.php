@@ -1,7 +1,7 @@
 <?php
 
+    // Función que conecta con la base de datos
     function conexion(){
-// Conecta con base de datos
         $mysqli = new mysqli("localhost", "root", "", "upes-reclamos");
         if ($mysqli->connect_errno) {
             echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
@@ -28,9 +28,7 @@
     }
 
 
-
-
-    //funcion que se encarga de ir a traer todos los datos de una tabla
+    //funcion que se encarga de buscar un usuario y contraseña específico en la tabla de usuarios.
     function findUser($tabla, $nombre, $pass){ 
         $respuesta = array();
         $bd = conexion();      
@@ -46,10 +44,6 @@
         }   
         return $respuesta;
     }
-
-
-
-
 
 
     // funcion para eliminar un registro de la BD

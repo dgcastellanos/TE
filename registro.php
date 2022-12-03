@@ -1,12 +1,8 @@
 <?php
 
-
   include('crud.php');
 
-
-
 if($_SERVER['REQUEST_METHOD']=='POST'){
-
 
     $datos = array(
 
@@ -23,19 +19,15 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
         $result  = create($datos,'usuario');
 
-
         if($result){
 
-          echo "<script>alert('Usuario registrado correctamente ve al login para que inicies sesion');</script>";
-
-        
+          echo "<script>alert('Usuario registrado correctamente, ahora puede iniciar sesión con sus credenciales');</script>";        
 
         }else{
           echo "<script>alert('No se pudo registrar el usuario');</script>";
         }
 
       }
-
 ?>
 
 
@@ -72,8 +64,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 </head>
 
 <body>
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -94,29 +84,28 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                             <fieldset>
 
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Correo" name="correo" type="email" autofocus>
+                                    <input class="form-control" placeholder="Correo" name="correo" type="email" autofocus required>
                                 </div>
 
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Nombre" name="nombre" type="text">
+                                    <input class="form-control" placeholder="Nombre" name="nombre" type="text" required>
                                 </div>
 
                                   <div class="form-group">
-                                    <input class="form-control" placeholder="Apellido" name="apellido" type="text">
+                                    <input class="form-control" placeholder="Apellido" name="apellido" type="text" required>
                                 </div>
 
                                   <div class="form-group">
-                                    <input class="form-control" placeholder="Celular" name="celular" type="number" maxlength="8">
+                                    <input class="form-control" placeholder="Celular" name="celular" type="number" maxlength="8" required>
                                 </div>
 
                                   <div class="form-group">
-                                    <input class="form-control" placeholder="Carnet" name="carnet" type="type" maxlength="6"> 
+                                    <input class="form-control" placeholder="Carnet" name="carnet" type="type" maxlength="8" required> 
                                 </div>
 
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Contraseña" name="pass" type="password">
+                                    <input class="form-control" placeholder="Contraseña" name="pass" type="password" required>
                                 </div>
-
                       
                                 <input type="submit" name="registro" class="btn btn-success btn-block" value="Registrarme">
 
@@ -124,7 +113,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                         </form>
                     </div>
                     <div class="panel-footer">
-                      <p>¿Ya estas registrado? <a href="login.php">Inicia sesion aqui</a></p>
+                      <p>¿Ya está registrado? <a href="login.php">Inicie sesión aquí</a></p>
                     </div>
                 </div>
             </div>

@@ -86,11 +86,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 <fieldset>
 
     <div class="form-group">
-        <input class="form-control" placeholder="Usuario" name="user" type="text" autofocus>
+        <input class="form-control" placeholder="Usuario" name="user" type="text" autofocus required>
     </div>
 
     <div class="form-group">
-        <input class="form-control" placeholder="Contraseña" name="pass" type="password">
+        <input class="form-control" placeholder="Contraseña" name="pass" type="password" required>
     </div>
 
     <div class="checkbox">
@@ -106,7 +106,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 </form>
         </div>
         <div class="panel-footer">
-          <p>¿No tienes una cuenta aun? <a href="registro.php">Registrate aqui</a></p>
+          <p>¿No tiene una cuenta? <a href="registro.php">Regístrese aquí</a></p>
         </div>
     </div>
 </div>
